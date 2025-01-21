@@ -1,0 +1,23 @@
+{
+    "name": "laravel/modules",
+    "autoload": {
+        "psr-4": {
+            "Laravel\\Modules\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "raza9798",
+            "email": "m.raza9798@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravel\\Modules\\ModuleServiceProvider"
+            ]
+        }
+    }
+}
