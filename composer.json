@@ -1,5 +1,5 @@
 {
-    "name": "core/modules",
+    "name": "raza9798/laravel-modules",
     "autoload": {
         "psr-4": {
             "Laravel\\Modules\\": "src/"
