@@ -47,6 +47,7 @@ class GenerateResourceCommand extends Command implements PromptsForMissingInput
             'What do you want to generate?',
             [
                 'all resources (controller, model, policy, factory, migration, seeder, view)',
+                'Api resources (controller, model, factory, migration, seeder)',
                 'controller',
                 'model',
                 'policy',
@@ -60,6 +61,13 @@ class GenerateResourceCommand extends Command implements PromptsForMissingInput
             switch ($anticipate) {
                 case 'all resources (controller, model, policy, factory, migration, seeder, view)':
                     $this->allResources($module, $name);
+                    break;
+                case 'Api resources (controller, model, factory, migration, seeder)':
+                    $this->controller($module, $name);
+                    $this->model($module, $name);
+                    $this->factory($module, $name);
+                    $this->migration($module, $name);
+                    $this->seeder($module, $name);
                     break;
                 case 'controller':
                     $this->controller($module, $name);
@@ -132,49 +140,28 @@ class GenerateResourceCommand extends Command implements PromptsForMissingInput
 
     private function controller($module, $name)
     {
-        $module = Str::ucfirst(Str::lower($module));
-        $name = Str::ucfirst(Str::lower($name));
-        $this->makeDirectory(app_path("Http/Controllers/{$module}"));
-        Artisan::call('make:controller', [
-            'name' => "{$module}\\{$name}Controller",
-            '--resource' => true
-        ]);
+        Artisan ::call("make:controller $module/{$name}Controller --resource");
     }
 
     private function model($module, $name)
     {
-        $module = Str::ucfirst(Str::lower($module));
-        $name = Str::ucfirst(Str::lower($name));
-        $this->makeDirectory(app_path("Models/{$module}"));
-        Artisan::call('make:model', [
-            'name' => "{$module}\\{$name}"
-        ]);
+        Artisan ::call("make:model $module/$name");
     }
 
     private function policy($module, $name)
     {
-        $module = Str::ucfirst(Str::lower($module));
-        $name = Str::ucfirst(Str::lower($name));
-        $this->makeDirectory(app_path("Policies/{$module}"));
-        Artisan::call('make:policy', [
-            'name' => "{$module}\\{$name}Policy"
-        ]);
+        Artisan::call("make:policy $module/{$name}Policy");
     }
 
     private function factory($module, $name)
     {
-        $module = Str::ucfirst(Str::lower($module));
-        $name = Str::ucfirst(Str::lower($name));
-        $this->makeDirectory(database_path("factories/{$module}"));
-        Artisan::call('make:factory', [
-            'name' => "{$module}\\{$name}Factory"
-        ]);
+        Artisan::call("make:factory $module/{$name}Factory");
     }
 
     private function migration($module, $name)
     {
         $module = Str::ucfirst(Str::lower($module));
-        $name = Str::lower($name);
+        $name = Str::snake(Str::pluralStudly($name));
 
         if (Schema::hasTable($name)) {
             $this->warn("Table '{$name}' already exists and not created.");
@@ -190,21 +177,11 @@ class GenerateResourceCommand extends Command implements PromptsForMissingInput
 
     private function seeder($module, $name)
     {
-        $module = Str::ucfirst(Str::lower($module));
-        $name = Str::ucfirst(Str::lower($name));
-        $this->makeDirectory(database_path("seeders/{$module}"));
-        Artisan::call('make:seeder', [
-            'name' => "{$module}\\{$name}Seeder"
-        ]);
+        Artisan::call("make:seeder $module/{$name}Seeder");
     }
 
     private function view($module, $name)
     {
-        $module = Str::ucfirst(Str::lower($module));
-        $name = Str::ucfirst(Str::lower($name));
-        $this->makeDirectory(resource_path("views/{$module}"));
-        Artisan::call('make:view', [
-            'name' => "{$module}.{$name}"
-        ]);
+        Artisan::call("make:view $module/{$name}");
     }
 }
