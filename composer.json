@@ -11,6 +11,7 @@
             "email": "m.raza9798@gmail.com"
         }
     ],
+    "license": "MIT",
     "minimum-stability": "dev",
     "require": {},
     "extra": {
