@@ -1,26 +1,65 @@
 {
-    "name": "raza9798/core-modules",
-    "autoload": {
-        "psr-4": {
-            "Core\\Modules\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "raza9798",
-            "email": "m.raza9798@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": "^8.2",
-        "laravel/framework": "^11.0"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Core\\Modules\\ModuleServiceProvider"
-            ]
-        }
+  "name": "raza9798/core-modules",
+  "autoload": {
+    "psr-4": {
+      "Core\\Modules\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "raza9798",
+      "email": "m.raza9798@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "description": "core-module is a Laravel package that streamlines modular development by organizing models, controllers, migrations, and policies under a clean namespace like Core/. It simplifies scaffolding and improves code separation for better project structure.",
+  "keywords": [
+    "laravel",
+    "modules",
+    "package",
+    "core",
+    "scaffolding",
+    "modular",
+    "development",
+    "structure",
+    "organization",
+    "models",
+    "controllers",
+    "migrations",
+    "policies",
+    "namespace",
+    "clean",
+    "separation",
+    "code",
+    "project",
+    "scaffolding",
+    "improvement",
+    "project-structure",
+    "laravel-package",
+    "laravel-modules",
+    "laravel-scaffolding",
+    "laravel-development",
+    "laravel-structure",
+    "laravel-organization",
+    "laravel-models",
+    "laravel-controllers",
+    "laravel-migrations",
+    "laravel-policies",
+    "laravel-namespace",
+    "laravel-clean",
+    "laravel-separation",
+    "laravel-code"
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^8.2",
+    "laravel/framework": "^11.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Core\\Modules\\ModuleServiceProvider"
+      ]
+    }
+  }
 }
