@@ -2,7 +2,7 @@
     "name": "raza9798/core-modules",
     "autoload": {
         "psr-4": {
-            "Laravel\\Modules\\": "src/"
+            "Core\\Modules\\": "src/"
         }
     },
     "authors": [
@@ -11,13 +11,15 @@
             "email": "m.raza9798@gmail.com"
         }
     ],
-    "license": "MIT",
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Laravel\\Modules\\ModuleServiceProvider"
+                "Core\\Modules\\ModuleServiceProvider"
             ]
         }
     }

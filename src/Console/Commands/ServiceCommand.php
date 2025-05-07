@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Modules\Console\Commands;
+namespace Core\Modules\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;

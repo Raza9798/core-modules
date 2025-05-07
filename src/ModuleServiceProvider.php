@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Modules;
+namespace Core\Modules;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Modules\Console\Commands\ServiceCommand;
-use Laravel\Modules\Console\Commands\GenerateResourceCommand;
+use Core\Modules\Console\Commands\ServiceCommand;
+use Core\Modules\Console\Commands\GenerateResourceCommand;
 
 class ModuleServiceProvider extends ServiceProvider
 {
