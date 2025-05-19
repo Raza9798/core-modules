@@ -92,7 +92,6 @@ class GenerateResourceCommand extends Command implements PromptsForMissingInput
                     break;
             }
 
-            $this->configureModule($module);
             $this->info('Resource generation completed.');
         } else {
             $this->warn('Resource generation discarded.');
@@ -100,25 +99,6 @@ class GenerateResourceCommand extends Command implements PromptsForMissingInput
 
         $this->info('RUN: php artisan module:make to generate resources.');
     }
-
-    private function configureModule($module)
-    {
-        $module = Str::ucfirst(Str::lower($module));
-        $slug = Str::slug($module);
-
-        $existingModule = DB::table('modules')->where('slug', $slug)->first();
-        if (!$existingModule) {
-            DB::table('modules')->insert([
-                'name' => $module,
-                'slug' => $slug,
-                'description' => 'This is a '. $module. ' module',
-                'is_active' => true,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
-        }
-    }
-    
 
     private function makeDirectory($path)
     {

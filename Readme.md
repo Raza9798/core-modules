@@ -10,7 +10,6 @@ core-modules is a Laravel package that streamlines modular development by organi
 ## 🛠 Project Configuration
 ```bash
 composer require raza9798/core-modules
-php artisan module:configure
 php artisan module:make {module} {ResourceName}
 
 ```

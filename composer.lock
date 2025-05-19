@@ -4,15 +4,76 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57699c6fdb8b15dd5fefd9ed42e4f812",
-    "packages": [],
+    "content-hash": "cef6f4edfec75698cf957ef66e7df61b",
+    "packages": [
+        {
+            "name": "raza9798/siteconfig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Raza9798/siteconfig.git",
+                "reference": "9a67d8f36dca3571095f62537ff34eed42076141"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Raza9798/siteconfig/zipball/9a67d8f36dca3571095f62537ff34eed42076141",
+                "reference": "9a67d8f36dca3571095f62537ff34eed42076141",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Core\\Siteconfig\\SiteconfigServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Core\\Siteconfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "raza9798",
+                    "email": "m.raza9798@gmail.com"
+                }
+            ],
+            "description": "A Laravel package for managing site configurations.",
+            "keywords": [
+                "Settings",
+                "application",
+                "configuration",
+                "environment",
+                "laravel",
+                "package",
+                "php",
+                "siteconfig"
+            ],
+            "support": {
+                "issues": "https://github.com/Raza9798/siteconfig/issues",
+                "source": "https://github.com/Raza9798/siteconfig/tree/3.0.0"
+            },
+            "time": "2025-05-12T11:02:00+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": "^8.2"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

@@ -52,7 +52,8 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": "^8.2"
+    "php": "^8.2",
+    "raza9798/siteconfig": "*"
   },
   "extra": {
     "laravel": {
