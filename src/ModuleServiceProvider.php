@@ -2,9 +2,9 @@
 
 namespace Core\Modules;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Core\Modules\Console\Commands\GenerateResourceCommand;
+use Illuminate\Filesystem\Filesystem;
 
 class ModuleServiceProvider extends ServiceProvider
 {
@@ -13,7 +13,8 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/**');
+        $paths = glob(base_path('database/migrations/*'), GLOB_ONLYDIR);
+        $this->loadMigrationsFrom($paths);
     }
 
     /**
